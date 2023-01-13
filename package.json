@@ -1,0 +1,29 @@
+{
+  "name": "healthcare-chatbot",
+  "version": "1.0.0",
+  "description": "healthcare chatbot",
+  "main": "index.js",
+  "scripts": {
+    "test": "chatbot",
+    "start": "nodemon --exec babel-node src/index.js"
+  },
+  "keywords": [
+    "chatbot",
+    "from",
+    "trungtan"
+  ],
+  "author": "trungtan",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.12",
+    "@babel/node": "^7.20.7",
+    "@babel/preset-env": "^7.20.2",
+    "nodemon": "^2.0.20"
+  }
+}
