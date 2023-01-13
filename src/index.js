@@ -7,6 +7,9 @@ let app = express()
 
 viewEngine(app);
 
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true }))
+
 //config web routes
 webRoutes(app);
 
