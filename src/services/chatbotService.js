@@ -51,7 +51,7 @@ let handleGetStarted = (sender_psid) => {
         try {
             let username = await getUserName(sender_psid)
             let response1 = { "text": `Chào mừng ${username} đến với dịch vụ đặt lịch khám HealthCare!` }
-            let response2 = sendGetStartedTemplate()
+            let response2 = getStartedTemplate()
             //send text message
             await callSendAPI(sender_psid, response1)
             //send text template
@@ -64,7 +64,7 @@ let handleGetStarted = (sender_psid) => {
     })
 }
 
-let sendGetStartedTemplate = () => {
+let getStartedTemplate = () => {
     let response = {
         "attachment": {
             "type": "template",
@@ -98,6 +98,80 @@ let sendGetStartedTemplate = () => {
     return response
 }
 
+let handleBooking = (sender_psid) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            // let username = await getUserName(sender_psid)
+            // let response1 = { "text": `Chào mừng ${username} đến với dịch vụ đặt lịch khám HealthCare!` }
+            let response2 = getBookingTemplate()
+            //send text message
+            await callSendAPI(sender_psid, response1)
+            //send text template
+            await callSendAPI(sender_psid, response2)
+
+            resolve('OK')
+        } catch (e) {
+            reject(e)
+        }
+    })
+}
+
+let getBookingTemplate = () => {
+    let response = {
+        "attachment": {
+            "type": "template",
+            "payload": {
+                "template_type": "generic",
+                "elements": [
+                    {
+                        "title": "Khám cơ xương khớp",
+                        "subtitle": "Dưới đây là các lựa chọn của HealthCare:",
+                        "image_url": "https://benhvienphuongdong.vn/public/uploads/tin-tuc/bai-viet/co-xuong-khop-khong-tru-mot-ai-2.jpg",
+                        "buttons": [
+                            {
+                                "type": "postback",
+                                "title": "ĐẶT LỊCH KHÁM",
+                                // "payload": "MAIN_MENU",
+                                "url": "https://deploy-health-care-react.vercel.app/detail-specialty/3",
+                                "webview_height_ratio": "full"
+                            }
+                        ],
+                    },
+                    {
+                        "title": "Khám thần kinh",
+                        "subtitle": "Dưới đây là các lựa chọn của HealthCare:",
+                        "image_url": "https://medlatec.vn/Content/images/Chuyen-khoa/anh-chinh-chuyen-khoa-noi-than-kinh.jpg",
+                        "buttons": [
+                            {
+                                "type": "postback",
+                                "title": "ĐẶT LỊCH KHÁM",
+                                // "payload": "MAIN_MENU",
+                                "url": "https://deploy-health-care-react.vercel.app/detail-specialty/4",
+                                "webview_height_ratio": "full"
+                            }
+                        ],
+                    },
+                    {
+                        "title": "Khám tiêu hóa",
+                        "subtitle": "Dưới đây là các lựa chọn của HealthCare:",
+                        "image_url": "https://cdn.benhvienthucuc.vn/wp-content/uploads/2021/06/kham-tieu-hoa-la-kham-nhung-gi.jpg",
+                        "buttons": [
+                            {
+                                "type": "postback",
+                                "title": "ĐẶT LỊCH KHÁM",
+                                // "payload": "MAIN_MENU",
+                                "url": "https://deploy-health-care-react.vercel.app/detail-specialty/5",
+                                "webview_height_ratio": "full"
+                            }
+                        ],
+                    }
+                ]
+            }
+        }
+    }
+    return response
+}
+
 module.exports = {
-    handleGetStarted
+    handleGetStarted, handleBooking
 }
