@@ -160,6 +160,76 @@ let getBookingTemplate = () => {
                                 "webview_height_ratio": "full"
                             }
                         ],
+                    },
+                    {
+                        "title": "Khám tim mạch",
+                        "subtitle": "Dưới đây là các lựa chọn của HealthCare:",
+                        "image_url": "https://aihealth.vn/app/uploads/2020/10/Picture2-28.png",
+                        "buttons": [
+                            {
+                                "type": "web_url",
+                                "title": "ĐẶT LỊCH KHÁM",
+                                // "payload": "MAIN_MENU",
+                                "url": "https://deploy-health-care-react.vercel.app/detail-specialty/6",
+                                "webview_height_ratio": "full"
+                            }
+                        ],
+                    },
+                    {
+                        "title": "Khám tai mũi họng",
+                        "subtitle": "Dưới đây là các lựa chọn của HealthCare:",
+                        "image_url": "https://phongkhamtaimuihong.com.vn/wp-content/uploads/2020/07/phong-ngua-tai-mui-hong.jpg",
+                        "buttons": [
+                            {
+                                "type": "web_url",
+                                "title": "ĐẶT LỊCH KHÁM",
+                                // "payload": "MAIN_MENU",
+                                "url": "https://deploy-health-care-react.vercel.app/detail-specialty/7",
+                                "webview_height_ratio": "full"
+                            }
+                        ],
+                    },
+                    {
+                        "title": "Khám cột sống",
+                        "subtitle": "Dưới đây là các lựa chọn của HealthCare:",
+                        "image_url": "https://tamanhhospital.vn/wp-content/uploads/2021/03/gai-cot-song.jpg",
+                        "buttons": [
+                            {
+                                "type": "web_url",
+                                "title": "ĐẶT LỊCH KHÁM",
+                                // "payload": "MAIN_MENU",
+                                "url": "https://deploy-health-care-react.vercel.app/detail-specialty/8",
+                                "webview_height_ratio": "full"
+                            }
+                        ],
+                    },
+                    {
+                        "title": "Y học cổ truyền",
+                        "subtitle": "Dưới đây là các lựa chọn của HealthCare:",
+                        "image_url": "https://www.tapchiyhoccotruyen.com/wp-content/uploads/2020/06/chua-viem-hong-bang-thuoc-nam.jpg",
+                        "buttons": [
+                            {
+                                "type": "web_url",
+                                "title": "ĐẶT LỊCH KHÁM",
+                                // "payload": "MAIN_MENU",
+                                "url": "https://deploy-health-care-react.vercel.app/detail-specialty/9",
+                                "webview_height_ratio": "full"
+                            }
+                        ],
+                    },
+                    {
+                        "title": "Châm cứu",
+                        "subtitle": "Dưới đây là các lựa chọn của HealthCare:",
+                        "image_url": "https://suckhoe123.vn/uploads/suc-khoe/cham-cuu.jpg",
+                        "buttons": [
+                            {
+                                "type": "web_url",
+                                "title": "ĐẶT LỊCH KHÁM",
+                                // "payload": "MAIN_MENU",
+                                "url": "https://deploy-health-care-react.vercel.app/detail-specialty/10",
+                                "webview_height_ratio": "full"
+                            }
+                        ],
                     }
                 ]
             }
