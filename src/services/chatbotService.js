@@ -103,11 +103,11 @@ let handleBooking = (sender_psid) => {
         try {
             // let username = await getUserName(sender_psid)
             // let response1 = { "text": `Chào mừng ${username} đến với dịch vụ đặt lịch khám HealthCare!` }
-            let response2 = getBookingTemplate()
+            let response1 = getBookingTemplate()
             //send text message
             await callSendAPI(sender_psid, response1)
             //send text template
-            await callSendAPI(sender_psid, response2)
+            // await callSendAPI(sender_psid, response2)
 
             resolve('OK')
         } catch (e) {
