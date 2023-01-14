@@ -76,9 +76,11 @@ let getStartedTemplate = () => {
                     "image_url": IMAGE_GETSTARTED,
                     "buttons": [
                         {
-                            "type": "postback",
+                            "type": "web_url",
                             "title": "GHÉ THĂM CHÚNG TÔI",
-                            "payload": "MAIN_MENU",
+                            // "payload": "MAIN_MENU",
+                            "url": "https://deploy-health-care-react.vercel.app/",
+                            "webview_height_ratio": "full"
                         },
                         {
                             "type": "postback",
@@ -101,14 +103,8 @@ let getStartedTemplate = () => {
 let handleBooking = (sender_psid) => {
     return new Promise(async (resolve, reject) => {
         try {
-            // let username = await getUserName(sender_psid)
-            // let response1 = { "text": `Chào mừng ${username} đến với dịch vụ đặt lịch khám HealthCare!` }
             let response1 = getBookingTemplate()
-            //send text message
             await callSendAPI(sender_psid, response1)
-            //send text template
-            // await callSendAPI(sender_psid, response2)
-
             resolve('OK')
         } catch (e) {
             reject(e)
@@ -129,7 +125,7 @@ let getBookingTemplate = () => {
                         "image_url": "https://benhvienphuongdong.vn/public/uploads/tin-tuc/bai-viet/co-xuong-khop-khong-tru-mot-ai-2.jpg",
                         "buttons": [
                             {
-                                "type": "postback",
+                                "type": "web_url",
                                 "title": "ĐẶT LỊCH KHÁM",
                                 // "payload": "MAIN_MENU",
                                 "url": "https://deploy-health-care-react.vercel.app/detail-specialty/3",
@@ -143,7 +139,7 @@ let getBookingTemplate = () => {
                         "image_url": "https://medlatec.vn/Content/images/Chuyen-khoa/anh-chinh-chuyen-khoa-noi-than-kinh.jpg",
                         "buttons": [
                             {
-                                "type": "postback",
+                                "type": "web_url",
                                 "title": "ĐẶT LỊCH KHÁM",
                                 // "payload": "MAIN_MENU",
                                 "url": "https://deploy-health-care-react.vercel.app/detail-specialty/4",
@@ -157,7 +153,7 @@ let getBookingTemplate = () => {
                         "image_url": "https://cdn.benhvienthucuc.vn/wp-content/uploads/2021/06/kham-tieu-hoa-la-kham-nhung-gi.jpg",
                         "buttons": [
                             {
-                                "type": "postback",
+                                "type": "web_url",
                                 "title": "ĐẶT LỊCH KHÁM",
                                 // "payload": "MAIN_MENU",
                                 "url": "https://deploy-health-care-react.vercel.app/detail-specialty/5",
