@@ -71,7 +71,7 @@ let sendGetStartedTemplate = () => {
             "payload": {
                 "template_type": "generic",
                 "elements": [{
-                    "title": "Xin chào bạn đến với HealthCare!",
+                    "title": "Kính chào quýnh khách đến với HealthCare!",
                     "subtitle": "Dưới đây là các lựa chọn của HealthCare:",
                     "image_url": IMAGE_GETSTARTED,
                     "buttons": [

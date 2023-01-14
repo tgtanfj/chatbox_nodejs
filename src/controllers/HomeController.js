@@ -126,6 +126,7 @@ async function handlePostback(sender_psid, received_postback) {
         case 'no':
             response = { "text": "Oops, try sending another image." }
             break;
+        case 'RESTART_BOT':    
         case 'GET_STARTED':
             await chatbotService.handleGetStarted(sender_psid)
             break;
@@ -188,9 +189,62 @@ let setUpProfile = async (req, res) => {
     return res.send("Setup user profile succedds!")
 }
 
+
+let setUpPersistentMenu = async (req, res) => {
+    // Construct the message body
+    let request_body = {
+        "psid": "<PSID>",
+        "persistent_menu": [
+            {
+                "locale": "default",
+                "composer_input_disabled": false,
+                "call_to_actions": [
+                    {
+                        "type": "web_url",
+                        "title": "Ghé thăm HealthCare",
+                        // "payload": "VIEW_HEALTHCARE",
+                        "url": "https://deploy-health-care-react.vercel.app",
+                        "webview_height_ratio": "full"
+                    },
+                    {
+                        "type": "web_url",
+                        "title": "Ghé thăm Github",
+                        // "payload": "VIEW_GITHUB",
+                        "url": "https://github.com/tgtanfj",
+                        "webview_height_ratio": "full"
+                    },
+                    {
+                        "type": "postback",
+                        "title": "Khởi động lại bot",
+                        "payload": "RESTART_BOT",
+                    }
+                ]
+            }
+        ]
+    }
+
+    // Send the HTTP request to the Messenger Platform
+    await request({
+        "uri": `https://graph.facebook.com/v15.0/me/messenger_profile?access_token=${PAGE_ACCESS_TOKEN}`,
+        "qs": { "access_token": PAGE_ACCESS_TOKEN },
+        "method": "POST",
+        "json": request_body
+    }, (err, res, body) => {
+        console.log(body)
+        if (!err) {
+            console.log('Setup persistent menu succedds!')
+        } else {
+            console.error("Unable to persistent menu:" + err);
+        }
+    });
+
+    return res.send("Setup persistent menu succedds!")
+}
+
 module.exports = {
     getHomePage: getHomePage,
     postWebhook: postWebhook,
     getWebhook: getWebhook,
-    setUpProfile: setUpProfile
+    setUpProfile: setUpProfile,
+    setUpPersistentMenu: setUpPersistentMenu
 }
